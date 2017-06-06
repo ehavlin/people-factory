@@ -8,17 +8,21 @@ function handleSubmit(ev) {
     const favoriteColor = f.favoriteColor.value
     const age = f.age.value
 
-    const colorDiv = `
-    <div style="background-color: ${favoriteColor}; width: 100px; height: 50px;"></div>
-    `
+    // const colorDiv = `
+    // <div style="background-color: ${favoriteColor}; width: 100px; height: 50px;"></div>
+    // `
 
-    details.innerHTML = `
-        <ul>
-            <li>Name: ${name}</li>
-            <li>Favorie Color: ${colorDiv}</li>
-            <li>Age: ${age}</li>
-        </ul>
-        `
+    // details.innerHTML = `
+    //     <ul>
+    //         <li>Name: ${name}</li>
+    //         <li>Favorie Color: ${colorDiv}</li>
+    //         <li>Age: ${age}</li>
+    //     </ul>
+    //     `
+    
+    addToDetails(name, favoriteColor, age)
+
+
 
     // const boldedName = document.createElement('strong')
     // boldedName.textContent = name
@@ -33,6 +37,22 @@ function handleSubmit(ev) {
     emptyParagraph.textContent = 'This color'
     emptyParagraph.style.color = color
     */
+}
+
+function addToDetails(name, favoriteColor, age){
+    const unOrderedList = document.createElement('ul')
+    const listName = document.createElement('li')
+    const listFavoriteColor = document.createElement('li')
+    const colorDiv = document.createElement('div')
+    colorDiv.setAttribute('style', 'background-color: ' + favoriteColor + '; width: 100px; height: 50px;')
+    const listAge = document.createElement('li')
+    listName.textContent = name
+    listFavoriteColor.appendChild(colorDiv)
+    listAge.textContent = age
+    details.appendChild(unOrderedList)
+    unOrderedList.appendChild(listName)
+    unOrderedList.appendChild(listFavoriteColor)
+    unOrderedList.appendChild(listAge)
 }
 
 personForm.addEventListener('submit', handleSubmit)
