@@ -42,13 +42,17 @@ function handleSubmit(ev) {
 function addToDetails(name, favoriteColor, age){
     const unOrderedList = document.createElement('ul')
     const listName = document.createElement('li')
+    listName.textContent = `Name: ${name}`
+
     const listFavoriteColor = document.createElement('li')
+    listFavoriteColor.innerHTML = `Favorite Color: `
     const colorDiv = document.createElement('div')
     colorDiv.setAttribute('style', 'background-color: ' + favoriteColor + '; width: 100px; height: 50px;')
-    const listAge = document.createElement('li')
-    listName.textContent = name
     listFavoriteColor.appendChild(colorDiv)
-    listAge.textContent = age
+
+    const listAge = document.createElement('li')
+    listAge.textContent = `Age: ${age}`
+   
     details.appendChild(unOrderedList)
     unOrderedList.appendChild(listName)
     unOrderedList.appendChild(listFavoriteColor)
