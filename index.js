@@ -46,9 +46,6 @@ function addToDetails(name, favoriteColor, age){
 
     const listFavoriteColor = document.createElement('li')
     listFavoriteColor.innerHTML = `Favorite Color: ${renderColor(favoriteColor).outerHTML}`
-    //const colorDiv = document.createElement('div')
-    //colorDiv.setAttribute('style', 'background-color: ' + favoriteColor + '; width: 100px; height: 50px;')
-   // listFavoriteColor.appendChild(colorDiv)
 
     const listAge = document.createElement('li')
     listAge.textContent = `Age: ${age}`
