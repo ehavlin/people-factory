@@ -45,10 +45,10 @@ function addToDetails(name, favoriteColor, age){
     listName.textContent = `Name: ${name}`
 
     const listFavoriteColor = document.createElement('li')
-    listFavoriteColor.innerHTML = `Favorite Color: `
-    const colorDiv = document.createElement('div')
-    colorDiv.setAttribute('style', 'background-color: ' + favoriteColor + '; width: 100px; height: 50px;')
-    listFavoriteColor.appendChild(colorDiv)
+    listFavoriteColor.innerHTML = `Favorite Color: ${renderColor(favoriteColor).outerHTML}`
+    //const colorDiv = document.createElement('div')
+    //colorDiv.setAttribute('style', 'background-color: ' + favoriteColor + '; width: 100px; height: 50px;')
+   // listFavoriteColor.appendChild(colorDiv)
 
     const listAge = document.createElement('li')
     listAge.textContent = `Age: ${age}`
@@ -57,6 +57,15 @@ function addToDetails(name, favoriteColor, age){
     unOrderedList.appendChild(listName)
     unOrderedList.appendChild(listFavoriteColor)
     unOrderedList.appendChild(listAge)
+}
+
+function renderColor(color){
+    const div = document.createElement('div')
+    div.style.backgroundColor = color
+    div.style.width = '100px'
+    div.style.height = '50px'
+
+    return div
 }
 
 personForm.addEventListener('submit', handleSubmit)
